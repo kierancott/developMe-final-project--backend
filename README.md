@@ -11,7 +11,7 @@
 
 The Virtual Machine is already configured from ScotchBox, and the Vagrant Box set up to use Laravel's Homestead. To get started:
 
-1. Clone this repo
+1. Fork this repo
 2. In your new local directory, run `vagrant up`
 3. Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
