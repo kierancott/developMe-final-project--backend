@@ -9,7 +9,7 @@
 
 ### Getting Started:
 
-The Virtual Machine is already configured from ScotchBox, and the Vagrant Box set up to use Laravel's Homstead. To get started:
+The Virtual Machine is already configured from ScotchBox, and the Vagrant Box set up to use Laravel's Homestead. To get started:
 
 1. Clone this repo
 2. In your new local directory, run `vagrant up`
@@ -17,15 +17,19 @@ The Virtual Machine is already configured from ScotchBox, and the Vagrant Box se
 
 ![Default view on Start](https://imgur.com/BvxRxn5.jpg?)
 
+---
+
 ### Troubleshooting:
 
-#### When I visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows, I get an Error 500: Internal Server Error
+#### Q: When I visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows, I get an Error 500: Internal Server Error
+A:
 Reload the vagrant box and provision it:
 `vagrant reload --provision`
 Generate a new app key:
 `php artisan key:generate`
 
-#### When I run `vagrant up`, I get the following error:
+#### Q: When I run `vagrant up`, I get the following error:
+A:
 ```
 Vagrant was unable to mount VirtualBox shared folders. This is usually
 because the filesystem "vboxsf" is not available. This filesystem is
