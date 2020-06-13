@@ -23,9 +23,14 @@ The Virtual Machine is already configured from ScotchBox, and the Vagrant Box se
 
 #### Q: When I visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows, I get an Error 500: Internal Server Error
 A:
+
 Reload the vagrant box and provision it:
+
 `vagrant reload --provision`
+
+
 Generate a new app key:
+
 `php artisan key:generate`
 
 #### Q: When I run `vagrant up`, I get the following error:
@@ -45,8 +50,12 @@ The error output from the command was:
 : No such device
 ```
 First, install the `vagrant-vbguest` plugin:
+
 `vagrant plugin install vagrant-vbguest`
+
+
 Next, initialise the plugin:
+
 `vagrant vbguest`
 
 ---
