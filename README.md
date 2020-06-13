@@ -9,7 +9,7 @@
 
 ### Collaborating:
 
-**Never commit directly to the master branch. Create a new branch, and make a merge request to a team-mate**
+**Never commit directly to the master branch. Create a new branch, and make a merge request to a team-mate.**
 
 ### Getting Started:
 
@@ -38,7 +38,6 @@ Generate a new app key:
 `php artisan key:generate`
 
 #### Q: When I run `vagrant up`, I get the following error:
-A:
 ```
 Vagrant was unable to mount VirtualBox shared folders. This is usually
 because the filesystem "vboxsf" is not available. This filesystem is
@@ -53,6 +52,8 @@ The error output from the command was:
 
 : No such device
 ```
+A:
+
 First, install the `vagrant-vbguest` plugin:
 
 `vagrant plugin install vagrant-vbguest`
