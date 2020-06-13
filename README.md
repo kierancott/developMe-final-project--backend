@@ -7,6 +7,10 @@
 - Henry MacFarlane
 - Richard Stibbard
 
+### Collaborating:
+
+**Never commit directly to the master branch. Create a new branch, and make a merge request to a team-mate**
+
 ### Getting Started:
 
 The Virtual Machine is already configured from ScotchBox, and the Vagrant Box set up to use Laravel's Homestead. To get started:
