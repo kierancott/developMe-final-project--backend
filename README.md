@@ -2,9 +2,9 @@
 ## Back-end Architecture - Laravel Blade
 
 ### Team:
+- Nik Osvalds
 - Kieran Cott
 - Henry MacFarlane
-- Nik Osvalds
 - Richard Stibbard
 
 ### Getting Started:
