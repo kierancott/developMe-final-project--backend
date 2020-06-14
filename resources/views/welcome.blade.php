@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <h4>This file: ~/resources/views/welcome.blade.php</h4>
+                    <h5>This file: ~/resources/views/welcome.blade.php</h5>
                 </div>
             </div>
         </div>
