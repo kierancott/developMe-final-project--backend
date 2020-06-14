@@ -24,6 +24,7 @@ DB_DATABASE=homestead
 DB_USERNAME=root
 DB_PASSWORD=secret
 ```
+* If your `.env` file does not exist, use the `env.example` file for setup
 5. Run `vagrant up`
 6. Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
