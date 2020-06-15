@@ -27,6 +27,7 @@ The Virtual Machine is already configured from ScotchBox, and the Vagrant Box se
 8. Navigate to new `code` folder: `cd code`
 9. Generate a new artisan key: `art key:generate`
 10. Run the database migration: `art migrate`
+11. Seed the database with data: `artisan db:seed`
 
 Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
