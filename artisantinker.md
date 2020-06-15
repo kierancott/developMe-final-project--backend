@@ -2,7 +2,7 @@
 
 #### Add a person to the database:
 
-`$person = Person::create(["name"=>"John Smith"]);`
+`$person = Person::create(["name"=>"Kieran Cott"]);`
 
 #### Add a movie to the database:
 
