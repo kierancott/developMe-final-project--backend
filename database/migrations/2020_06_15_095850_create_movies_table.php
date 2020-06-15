@@ -16,6 +16,7 @@ class CreateMoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
             $table->string("name", 140);
+            $table->integer("year");
         });
 
         // create the pivot table using the Eloquent naming convention
