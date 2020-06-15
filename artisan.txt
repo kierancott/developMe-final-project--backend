@@ -1,5 +1,0 @@
-$person = Person::create(["name"=>"Kieran Cott"]);
-
-$movie = Movie::create(["name"=>"Fight Club", "year"=>1999]);
-
-$movie->people()->sync([1])
