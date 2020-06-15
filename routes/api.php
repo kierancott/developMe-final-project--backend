@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/people', 'PersonController@index');
+
+Route::get('/people/{id}', 'PersonController@show');
