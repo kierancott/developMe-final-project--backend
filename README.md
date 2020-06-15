@@ -15,18 +15,20 @@
 
 The Virtual Machine is already configured from ScotchBox, and the Vagrant Box set up to use Laravel's Homestead. To get started:
 
-1. Fork this repo
-2. In your new directory, run `composer require laravel/homestead`
+1. Clone this repo and `cd` into folder
+2. In your new directory, run `composer install`
 3. Run `vendor/bin/homestead make`
-4. In your `.env` file, set the following:
-```
-DB_DATABASE=homestead
-DB_USERNAME=root
-DB_PASSWORD=secret
-```
-* If your `.env` file does not exist, use the `.env.example` file for setup
-5. Run `vagrant up`
-6. Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
+4. Copy the `.env.example` file to a new `.env` file:
+`cp .env.example .env`
+
+5. Update the db, username and password your `.env` file
+6. Run `vagrant up`
+7. Login to the virtual machine: `vagrant ssh`
+8. Navigate to new `code` folder: `cd code`
+9. Generate a new artisan key: `art key:generate`
+10. Run the database migration: `art migrate`
+
+Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
 ![Default view on Start](https://imgur.com/v6YqxSl.jpg?)
 
