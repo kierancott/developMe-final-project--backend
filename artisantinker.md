@@ -6,10 +6,10 @@
 
 #### Add a movie to the database:
 
-$movie = Movie::create(["name"=>"Fight Club", "year"=>1999]);
+`$movie = Movie::create(["name"=>"Fight Club", "year"=>1999]);`
 
 #### Define relationship:
 
 Assign `$movie` (created above) to person in people table with id = 1:
 
-$movie->people()->sync([1]);
+`$movie->people()->sync([1]);`
