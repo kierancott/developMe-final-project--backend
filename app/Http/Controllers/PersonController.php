@@ -20,10 +20,10 @@ class PersonController extends Controller
         return new PersonResource(Person::find($id));
     }
 
-    public function match()
+    public function match(Request $request)
     {
-        $peopleIds = collect([6, 7, 8, 9]);
-
+        $peopleIds = collect(explode(",", $request->query("people")));
+        
         $selectedMovies = $peopleIds->flatMap(function($personId) {
             // fetch person from database, chain movies property to access their movies
             return Person::find($personId)->movies;
@@ -53,7 +53,7 @@ class PersonController extends Controller
 
         }
 
-        return Movie::find($result["movieId"]);
+        return new MovieResource(Movie::find($result["movieId"]));
 
     }
 }
