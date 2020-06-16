@@ -20,4 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/people', 'PersonController@index');
 
+Route::get('people/match', 'PersonController@match');
+
 Route::get('/people/{id}', 'PersonController@show');
+
+
