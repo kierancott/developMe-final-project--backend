@@ -53,7 +53,6 @@ class PersonController extends Controller
 
         }
 
-
         return new MovieResource(Movie::find($result["movieId"])); 
 
     }
