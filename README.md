@@ -103,18 +103,11 @@ Returns an individual person as JSON object where `:id` is a person ID
 Returns the movie most frequently liked by the people specified as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs.
 ```
 {
-     "movies" : [
-             {
-                "id": "7",
-                "name": "Fight Club"
-                "year: "1999"
-             },
-             {
-                "id": "2",
-                "name": "The Shawshank Redemption"
-                "year: "1994"
-             },
-       ]
+
+    "id": "7",
+    "name": "Fight Club",
+    "year: "1999"
+
 }
 ```
 
