@@ -53,8 +53,20 @@ class PersonController extends Controller
 
         }
 
+        if ($result["frequency"] === 1) {
 
-        return new MovieResource(Movie::find($result["movieId"])); 
+            return [
+                    'id' => 0,
+                    'name' => "",
+                    'year' => "",
+                ];
+            
+            }	        
+            else {	  
 
+                return new MovieResource(Movie::find($result["movieId"])); 
+                
+            }
     }
 }
+  
