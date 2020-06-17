@@ -31,7 +31,7 @@ The Virtual Machine is already configured from ScotchBox, and the Vagrant Box se
 
 Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
-![Default view on Start](https://imgur.com/v6YqxSl.jpg?)
+![Default view on Start](https://imgur.com/5lm33Fd.jpg?)
 
 ---
 
