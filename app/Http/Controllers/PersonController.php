@@ -54,10 +54,14 @@ class PersonController extends Controller
         }
 
         if ($result["frequency"] === 1) {
+
             return "No matches";
-        } else {
+
+        }
+        else {
 
             return new MovieResource(Movie::find($result["movieId"]));
+            
         }
 
     }
