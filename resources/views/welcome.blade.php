@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Movies
+                    MovieHopper
                 </div>
 
                 <div class="links">
