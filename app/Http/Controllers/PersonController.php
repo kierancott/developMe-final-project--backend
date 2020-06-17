@@ -55,7 +55,11 @@ class PersonController extends Controller
 
         if ($result["frequency"] === 1) {
 
-            return "No matches";
+            return [
+                'id' => 0,
+                'name' => "",
+                'year' => "",
+            ];
 
         }
         else {
