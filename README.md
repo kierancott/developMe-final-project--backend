@@ -99,8 +99,8 @@ Returns an individual person as JSON object where `:id` is a person ID
 ```
 
 
-#### GET Request - `api/people/match/?name=":id1,:id2,:id3"`
-Returns the movie most frequently liked by the people specified as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs.
+#### GET Request - `api/people/match/?people=:id1,:id2,:id3`
+Returns the movie most frequently liked by the people specified as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs (`1`,`2`,`3`).
 ```
 {
     "id": "7",
