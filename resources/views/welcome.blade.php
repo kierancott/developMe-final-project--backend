@@ -81,10 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Movies
+                    MovieHopper
                 </div>
 
                 <div class="links">
+                    <h3><a href="https://github.com/kierancott/developMe-final-project--backend">Get started with this API</a></h3>
                     <h5>This file: ~/resources/views/welcome.blade.php</h5>
                 </div>
             </div>

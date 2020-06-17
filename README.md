@@ -31,7 +31,83 @@ The Virtual Machine is already configured from ScotchBox, and the Vagrant Box se
 
 Visit `http://homestead.test` on Mac or `http://localhost:8000` on Windows:
 
-![Default view on Start](https://imgur.com/v6YqxSl.jpg?)
+![Default view on Start](https://imgur.com/5lm33Fd.jpg?)
+
+---
+
+# MovieHopper API
+
+## General
+
+All requests should:
+
+- Use the basename `https://homestead.test/api/`
+- Be sent using JSON and with the `Accept: application/json` header.
+
+End point(s):
+
+- `/api/people`
+
+### People - `/api/people`
+
+#### `GET /api/people`
+
+Returns people as JSON object:
+
+```
+{
+    "people": [
+        {
+            "id": "1",
+            "name": "Chris Cassidy",
+        },
+        {
+            "id": "2",
+            "name": "Anatoly Ivanishin"
+        },
+        {
+            "id": "3",
+            "name": "Ivan Vagner"
+        },
+    ]
+}
+```
+
+**Does not return movies.**
+
+#### `GET /people/:id`
+
+Returns an individual person as JSON object where `:id` is a person ID
+
+```
+{
+     "id": "3",
+     "name": "Ivan Vagner",
+     "movies" : [
+             {
+                "id": "7",
+                "name": "Fight Club"
+                "year: "1999"
+             },
+             {
+                "id": "2",
+                "name": "The Shawshank Redemption"
+                "year: "1994"
+             },
+       ]
+}
+```
+
+
+#### GET Request - `api/people/match/?people=:id1,:id2,:id3`
+Returns the movie most frequently liked by the people specified as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs (`1`,`2`,`3`).
+```
+{
+    "id": "7",
+    "name": "Fight Club",
+    "year: "1999"
+}
+```
 
 ---
 
