@@ -24,4 +24,6 @@ Route::get('/people/match', 'PersonController@match');
 
 Route::get('/people/{id}', 'PersonController@show');
 
+Route::get('/movies', 'MoviesController@index');
+
 
