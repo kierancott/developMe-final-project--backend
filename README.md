@@ -150,7 +150,7 @@ Returns all the movies that are liked by the people specified and adds the frequ
 ### People - `/api/people`
 
 #### GET Request - `api/movies`
-Returns all the movies adds the frequency by which they are liked - returned as an array within a JSON object:
+Returns all the movies and adds the frequency by which they are liked - returned as an array within a JSON object:
 
 ```
 [
