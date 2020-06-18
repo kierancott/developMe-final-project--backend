@@ -42,6 +42,5 @@ class PersonController extends Controller
         }
 
         return ["data"=>array_values($preferenceFrequency)];
-            
-    }
-}
+      }
+  }
