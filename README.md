@@ -104,46 +104,32 @@ Returns all the movies that are liked by the people specified and adds the frequ
 
 *Note that a frequency of `1` would indicate the movie is not mutually liked by any of the people specified.*
 ```
-{
-    "data": [
-        {
-            "frequency": 3,
-            "movie": {
-                "id": 27,
-                "name": "mesh best-of-breed systems",
-                "year": 1997,
-                "pivot": {
-                    "person_id": 5,
-                    "movie_id": 27
-                }
-            }
-        },
-        {
-            "frequency": 1,
-            "movie": {
-                "id": 28,
-                "name": "benchmark robust users",
-                "year": 2008,
-                "pivot": {
-                    "person_id": 5,
-                    "movie_id": 28
-                }
-            }
-        },
-        {
-            "frequency": 2,
-            "movie": {
-                "id": 29,
-                "name": "harness proactive systems",
-                "year": 2003,
-                "pivot": {
-                    "person_id": 5,
-                    "movie_id": 29
-                }
-            }
+[
+    {
+        "frequency": 4,
+        "movie": {
+            "id": 1,
+            "name": "incubate best-of-breed mindshare",
+            "year": 2013
         }
-    ]
-}
+    },
+    {
+        "frequency": 3,
+        "movie": {
+            "id": 2,
+            "name": "benchmark vertical ROI",
+            "year": 1986
+        }
+    },
+    {
+        "frequency": 5,
+        "movie": {
+            "id": 3,
+            "name": "unleash ubiquitous technologies",
+            "year": 1991
+        }
+    }
+]
 ```
 
 ---
