@@ -29,7 +29,7 @@ class PersonController extends Controller
             return Person::find($personId)->movies;
         });
 
-        // frequency as a collection
+        // frequency as an array
         $preferenceFrequency = [];
 
         foreach ($selectedMovies as $movie) {
