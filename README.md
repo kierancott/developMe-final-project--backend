@@ -100,12 +100,49 @@ Returns an individual person as JSON object where `:id` is a person ID
 
 
 #### GET Request - `api/people/match/?people=:id1,:id2,:id3`
-Returns the movie most frequently liked by the people specified as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs (`1`,`2`,`3`).
+Returns all the movies that are liked by the people specified and adds the frequency by which they are liked - returned as JSON object, where `:id1`, `:id2` and `:id3` refer to person IDs (`1`,`2`,`3`).
+
+*Note that a frequency of `1` would indicate the movie is not mutually liked by any of the people specified.*
 ```
 {
-    "id": "7",
-    "name": "Fight Club",
-    "year: "1999"
+    "data": [
+        {
+            "frequency": 3,
+            "movie": {
+                "id": 27,
+                "name": "mesh best-of-breed systems",
+                "year": 1997,
+                "pivot": {
+                    "person_id": 5,
+                    "movie_id": 27
+                }
+            }
+        },
+        {
+            "frequency": 1,
+            "movie": {
+                "id": 28,
+                "name": "benchmark robust users",
+                "year": 2008,
+                "pivot": {
+                    "person_id": 5,
+                    "movie_id": 28
+                }
+            }
+        },
+        {
+            "frequency": 2,
+            "movie": {
+                "id": 29,
+                "name": "harness proactive systems",
+                "year": 2003,
+                "pivot": {
+                    "person_id": 5,
+                    "movie_id": 29
+                }
+            }
+        }
+    ]
 }
 ```
 
