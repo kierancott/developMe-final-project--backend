@@ -29,31 +29,18 @@ class PersonController extends Controller
             return Person::find($personId)->movies;
         });
 
-        // frequency as a collection
-        $preferenceFrequency = collect([]);
+        // frequency as an array
+        $preferenceFrequency = [];
 
         foreach ($selectedMovies as $movie) {
 
             if (!isset($preferenceFrequency[$movie->id])) {
-                $preferenceFrequency[$movie->id] = 0;
+                $preferenceFrequency[$movie->id] = ["frequency"=>0, "movie"=>$movie];
             }
     
-            $preferenceFrequency[$movie->id] += 1;
+            $preferenceFrequency[$movie->id]["frequency"] += 1;
         }
 
-        $result = ["movieId"=>null, "frequency"=>0];
-
-        // access key & value from associative array
-        foreach ($preferenceFrequency as $movieId=>$frequency) {
-            
-            if ($frequency > $result["frequency"]) {
-
-                $result = ["movieId"=>$movieId, "frequency"=>$frequency];
-            }
-
-        }
-
-        return new MovieResource(Movie::find($result["movieId"])); 
-
-    }
-}
+        return ["data"=>array_values($preferenceFrequency)];
+      }
+  }
