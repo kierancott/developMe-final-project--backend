@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "957e9558f2b45603e616042fb3286559",
+    "content-hash": "ac3f5a5974c228038df8b0953e6fe282",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -444,25 +444,24 @@
         },
         {
             "name": "flynsarmy/csv-seeder",
-            "version": "v2.0.3",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
-                "reference": "83c37df624b6d8b026de2cc6e4f21d401e10c03d"
+                "reference": "847905569e9921e5d184a630e2d348f929b69401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/83c37df624b6d8b026de2cc6e4f21d401e10c03d",
-                "reference": "83c37df624b6d8b026de2cc6e4f21d401e10c03d",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/847905569e9921e5d184a630e2d348f929b69401",
+                "reference": "847905569e9921e5d184a630e2d348f929b69401",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": ">=4.1.0",
-                "php": ">=7.4"
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "orchestra/testbench": "5.*",
-                "squizlabs/php_codesniffer": "3.*"
+                "orchestra/testbench": "^6.0@dev"
             },
             "type": "library",
             "autoload": {
@@ -488,7 +487,7 @@
                 "seeding",
                 "seeds"
             ],
-            "time": "2020-05-18T11:07:35+00:00"
+            "time": "2020-03-26T14:29:37+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
