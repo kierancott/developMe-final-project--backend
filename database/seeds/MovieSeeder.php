@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Flynsarmy\CsvSeeder\CsvSeeder;
 use Illuminate\Support\Facades\DB;
 
-class PeopleSeeder extends CsvSeeder
+class MovieSeeder extends CsvSeeder
 {
     /**
      * Run the database seeds.
@@ -13,8 +13,8 @@ class PeopleSeeder extends CsvSeeder
      */
     public function __construct()
 	{
-		$this->table = 'people';
-		$this->filename = base_path().'/database/seeds/csv/people.csv';
+		$this->table = 'movies';
+		$this->filename = base_path().'/database/seeds/csv/movies.csv';
 	}
 
     public function run()
