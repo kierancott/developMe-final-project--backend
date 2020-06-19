@@ -54,7 +54,7 @@ All requests should:
 End point(s):
 
 - `/api/people`
-- `api/movies`
+- `/api/movies`
 
 ### People - `/api/people`
 
@@ -154,7 +154,7 @@ Returns all the movies that are liked by the people specified and adds the frequ
 }
 ```
 
-### People - `/api/people`
+### Movies - `/api/movies`
 
 #### GET Request - `api/movies`
 Returns all the movies and adds the frequency by which they are liked - returned as an array within a JSON object:
