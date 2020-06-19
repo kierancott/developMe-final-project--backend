@@ -1,10 +1,14 @@
 # DevelopMe_ Cohort #16: Final Project
 ## Back-end Architecture - Laravel Blade
 
-### Team:
-- Nik Osvalds
+[Trello Planning Board](https://trello.com/b/3IYLhVts/movie-hopper-planning)
+
+Team:
+Back End
 - Kieran Cott
 - Henry MacFarlane
+Front End
+- Nik Osvalds
 - Richard Stibbard
 
 ### Collaborating:
