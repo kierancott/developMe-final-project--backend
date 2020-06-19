@@ -1,0 +1,213 @@
+-- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
+--
+-- Host: localhost    Database: homestead
+-- ------------------------------------------------------
+-- Server version	5.7.29-0ubuntu0.18.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2020_06_15_094627_create_people_table',1),(5,'2020_06_15_095850_create_movies_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `movie_person`
+--
+
+DROP TABLE IF EXISTS `movie_person`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movie_person` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `person_id` bigint(20) unsigned NOT NULL,
+  `movie_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `movie_person_person_id_foreign` (`person_id`),
+  KEY `movie_person_movie_id_foreign` (`movie_id`),
+  CONSTRAINT `movie_person_movie_id_foreign` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `movie_person_person_id_foreign` FOREIGN KEY (`person_id`) REFERENCES `people` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=331 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movie_person`
+--
+
+LOCK TABLES `movie_person` WRITE;
+/*!40000 ALTER TABLE `movie_person` DISABLE KEYS */;
+INSERT INTO `movie_person` VALUES (1,8,90),(2,8,9),(3,3,9),(4,1,9),(5,2,89),(6,1,88),(7,1,87),(8,10,86),(9,1,86),(10,3,85),(11,3,84),(12,6,83),(13,2,83),(14,10,83),(15,6,82),(16,4,80),(17,9,8),(18,8,8),(19,7,8),(20,6,79),(21,1,78),(22,1,77),(23,4,76),(24,3,75),(25,9,74),(26,8,74),(27,7,74),(28,4,74),(29,2,74),(30,10,74),(31,1,74),(32,8,72),(33,6,72),(34,2,72),(35,10,72),(36,9,71),(37,7,71),(38,4,71),(39,2,71),(40,10,71),(41,1,71),(42,9,70),(43,8,70),(44,6,70),(45,5,70),(46,4,70),(47,2,70),(48,10,70),(49,9,7),(50,8,7),(51,1,7),(52,6,69),(53,9,68),(54,7,68),(55,10,68),(56,1,68),(57,9,67),(58,8,67),(59,7,67),(60,6,67),(61,4,67),(62,2,67),(63,10,67),(64,9,66),(65,7,66),(66,6,66),(67,5,66),(68,4,66),(69,2,66),(70,10,66),(71,1,66),(72,9,65),(73,8,65),(74,10,65),(75,1,65),(76,3,64),(77,9,63),(78,7,63),(79,6,63),(80,4,63),(81,2,63),(82,6,62),(83,10,62),(84,9,61),(85,7,61),(86,6,61),(87,4,61),(88,3,61),(89,2,61),(90,5,60),(91,1,60),(92,2,6),(93,1,6),(94,8,59),(95,7,59),(96,6,59),(97,5,59),(98,4,59),(99,3,59),(100,2,59),(101,10,59),(102,9,58),(103,8,58),(104,4,58),(105,2,58),(106,10,58),(107,9,57),(108,8,57),(109,6,57),(110,4,57),(111,3,57),(112,2,57),(113,10,57),(114,7,56),(115,6,56),(116,4,56),(117,9,55),(118,7,55),(119,6,55),(120,5,55),(121,4,55),(122,3,55),(123,2,55),(124,10,55),(125,1,55),(126,9,54),(127,6,54),(128,4,54),(129,3,54),(130,2,54),(131,10,54),(132,1,54),(133,8,53),(134,7,53),(135,6,53),(136,5,53),(137,4,52),(138,2,52),(139,10,52),(140,1,52),(141,3,51),(142,9,50),(143,8,50),(144,7,50),(145,10,50),(146,6,49),(147,4,49),(148,3,49),(149,2,49),(150,10,49),(151,1,49),(152,8,48),(153,6,48),(154,5,48),(155,2,48),(156,10,48),(157,7,47),(158,6,47),(159,5,47),(160,4,47),(161,3,47),(162,10,47),(163,1,47),(164,8,46),(165,7,46),(166,6,46),(167,3,46),(168,7,45),(169,4,45),(170,3,45),(171,10,45),(172,6,44),(173,10,44),(174,9,43),(175,8,43),(176,7,43),(177,6,43),(178,4,43),(179,2,43),(180,10,43),(181,9,42),(182,8,42),(183,7,42),(184,4,42),(185,3,42),(186,2,42),(187,10,42),(188,8,41),(189,7,41),(190,6,41),(191,4,41),(192,2,41),(193,10,41),(194,1,41),(195,9,40),(196,8,40),(197,7,40),(198,6,40),(199,4,40),(200,2,40),(201,8,4),(202,7,4),(203,9,39),(204,7,39),(205,6,39),(206,2,39),(207,10,39),(208,1,39),(209,9,38),(210,8,38),(211,7,38),(212,6,38),(213,5,38),(214,2,38),(215,10,38),(216,9,37),(217,8,37),(218,7,37),(219,6,37),(220,10,37),(221,9,36),(222,8,36),(223,7,36),(224,5,36),(225,10,36),(226,8,34),(227,7,34),(228,6,34),(229,5,34),(230,3,34),(231,1,34),(232,9,33),(233,8,33),(234,7,33),(235,6,33),(236,5,33),(237,4,33),(238,6,31),(239,8,30),(240,7,30),(241,6,30),(242,5,30),(243,4,30),(244,3,30),(245,2,30),(246,10,30),(247,1,30),(248,8,3),(249,9,29),(250,8,29),(251,7,29),(252,6,29),(253,3,29),(254,2,29),(255,10,29),(256,8,28),(257,5,28),(258,4,28),(259,2,28),(260,10,28),(261,1,28),(262,9,27),(263,7,27),(264,6,27),(265,4,27),(266,10,27),(267,1,27),(268,10,26),(269,1,26),(270,9,25),(271,8,25),(272,7,25),(273,6,25),(274,5,25),(275,2,25),(276,10,25),(277,8,24),(278,7,24),(279,10,24),(280,1,24),(281,8,23),(282,7,23),(283,2,23),(284,10,23),(285,7,22),(286,6,22),(287,3,22),(288,10,22),(289,1,22),(290,1,21),(291,9,20),(292,7,20),(293,10,20),(294,1,20),(295,1,2),(296,9,18),(297,7,18),(298,6,18),(299,4,18),(300,10,18),(301,1,18),(302,9,17),(303,8,17),(304,7,17),(305,6,17),(306,4,17),(307,10,17),(308,1,16),(309,7,15),(310,6,15),(311,10,15),(312,7,14),(313,10,14),(314,1,14),(315,9,13),(316,8,13),(317,7,13),(318,6,13),(319,4,13),(320,10,13),(321,8,12),(322,7,12),(323,6,12),(324,2,12),(325,1,12),(326,7,11),(327,3,11),(328,7,10),(329,6,10),(330,1,1);
+/*!40000 ALTER TABLE `movie_person` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `movies`
+--
+
+DROP TABLE IF EXISTS `movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movies` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(140) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movies`
+--
+
+LOCK TABLES `movies` WRITE;
+/*!40000 ALTER TABLE `movies` DISABLE KEYS */;
+INSERT INTO `movies` VALUES (1,'Casablanca ',1942),(2,'Seven Samurai ',1954),(3,'12 Angry Men',1957),(4,'Psycho ',1960),(5,'Zulu ',1964),(6,'The Good, The Bad and The Ugly ',1966),(7,'2001: A Space Odyssey',1968),(8,'A Clockwork Orange ',1971),(9,'The Godfather',1972),(10,'The Godfather: Part II ',1974),(11,'One Flew Over the Cuckoo’s Nest ',1975),(12,'Taxi Driver',1976),(13,'Star Wars Episode IV: A New Hope ',1977),(14,'Apocalypse Now',1979),(15,'Alien',1979),(16,'The Elephant Man ',1980),(17,'Star Wars Episode V: The Empire Strikes Back ',1980),(18,'Raiders of the Lost Ark ',1981),(19,'Das Boot ',1981),(20,'Blade Runner ',1982),(21,'Once Upon a Time in America ',1984),(22,'Back to the Future',1985),(23,'Full Metal Jacket ',1987),(24,'Goodfellas ',1990),(25,'Reservoir Dogs ',1992),(26,'Schindler\'s List',1993),(27,'Jurassic Park',1993),(28,'The Shawshank Redemption',1994),(29,'Pulp Fiction',1994),(30,'Forrest Gump ',1994),(31,'Leon ',1994),(32,'Braveheart ',1995),(33,'Seven ',1995),(34,'Trainspotting ',1996),(35,'Children of Heaven ',1997),(36,'Good Will Hunting ',1997),(37,'The Big Lebowski ',1998),(38,'Saving Private Ryan ',1998),(39,'The Green Mile ',1999),(40,'American Beauty',1999),(41,'The Matrix ',1999),(42,'Fight Club ',1999),(43,'Gladiator',2000),(44,'X-Men ',2000),(45,'Memento',2000),(46,'Requiem for a Dream ',2000),(47,'Amélie ',2001),(48,'Shrek ',2001),(49,'The Lord of the Rings: The Fellowship of the Ring ',2001),(50,'Harry Potter and the Philosopher’s Stone ',2001),(51,'Zoolander ',2001),(52,'The Pianist',2002),(53,'City of God ',2002),(54,'The Lord of the Rings: The Two Towers ',2002),(55,'Finding Nemo ',2003),(56,'Oldboy ',2003),(57,'The Lord of the Rings: The Return of the King ',2003),(58,'Pirates of the Caribbean: The Curse of the Black Pearl ',2003),(59,'Monsters, Inc ',2003),(60,'The Notebook',2004),(61,'Eternal Sunshine of the Spotless Mind ',2004),(62,'Downfall ',2004),(63,'Batman Begins',2005),(64,'Little Miss Sunshine ',2006),(65,'Gran Torino ',2008),(66,'WALL-E ',2008),(67,'The Dark Knight ',2008),(68,'Quantum of Solace ',2008),(69,'In Bruges',2008),(70,'Inglorious Basterds',2009),(71,'Inception ',2010),(72,'Django Unchained ',2012),(73,'The Hunt',2012),(74,'The Dark Knight Rises',2012),(75,'Moonrise Kingdom ',2012),(76,'Nightcrawler ',2014),(77,'Fifty Shades of Grey ',2015),(78,'Spectre ',2015),(79,'Son of Saul',2015),(80,'Your name.',2016),(81,'Dangal ',2016),(82,'Hunt for the Wilderpeople',2016),(83,'Logan ',2017),(84,'Three Billboards Outside Ebbing, Missouri ',2017),(85,'If Beale Street Could Talk ',2018),(86,'Knives Out ',2019),(87,'Murder Mystery ',2019),(88,'Extremely Wicked, Shockingly Evil and Vile ',2019),(89,'1917',2019),(90,'The Lighthouse ',2019);
+/*!40000 ALTER TABLE `movies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `people`
+--
+
+DROP TABLE IF EXISTS `people`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `people` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `people`
+--
+
+LOCK TABLES `people` WRITE;
+/*!40000 ALTER TABLE `people` DISABLE KEYS */;
+INSERT INTO `people` VALUES (1,'Richard',NULL,NULL),(2,'Duncan',NULL,NULL),(3,'Hannah',NULL,NULL),(4,'Jack Stanbridge',NULL,NULL),(5,'Maddy',NULL,NULL),(6,'Mark',NULL,NULL),(7,'Pete',NULL,NULL),(8,'Adam',NULL,NULL),(9,'Nik',NULL,NULL),(10,'Kieran',NULL,NULL);
+/*!40000 ALTER TABLE `people` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-06-19 11:43:35
