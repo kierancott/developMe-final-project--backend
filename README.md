@@ -5,9 +5,12 @@
 
 Team:
 Back End
+
 - Kieran Cott
 - Henry MacFarlane
+
 Front End
+
 - Nik Osvalds
 - Richard Stibbard
 
